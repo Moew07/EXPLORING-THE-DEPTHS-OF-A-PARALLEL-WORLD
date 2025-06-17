@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeeVaza Entertainment</title>
+    <link rel="stylesheet" href="./фильмы.css">
+</head>
+<body>
+    <header>
+        <h1>LeeVaza Entertainment</h1>
+        <h2>Фильмы и мультик</h2>
+    </header>
+    <div class="image-container">
+        <img src="./1737650157303.png" alt="Первое изображение" class="primary">
+        <img src="./1737649614622.png" alt="Второе изображение" class="secondary">
+        <div class="menu">
+            <p class="me">МЕНЮ:</p>
+            <a href="./главная.html">✩Главная</a>
+            <a href="./девочки из эквестрии.html">✩Девочки<br> из Эквестрии</a>
+            <a href="./игра.html">✩Игра</a>
+        </div>
+    </div>
+    <main>
+        <div class="slider">
+            <div class="slides">
+                <div class="slide">
+                    <video src="VID_20250125_093556_902.mp4" autoplay muted loop alt="mlp ">
+                </div>
+                <div class="slide">
+                    <video src="./Музыка_из_мой_маленький_пони_Девушки_эквестрии_Финал,_песня_сирен.mp4" autoplay muted loop alt="mlp ">
+                </div>
+                <div class="slide">
+                    <video src="./Девочки_из_Эквестрии_3_Игры_Дружбы_песня_¦Используй_силу¦_Русский.mp4" autoplay muted loop alt="mlp ">
+                </div>
+            </div>
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+
+        <div class="nyy">
+            <p>Фильмы и мультик</p>
+            <div class="nyy-img">
+                <div><a href="https://rutube.ru/video/ea108c90c4df093f167b4f905c4000f9/?ysclid=m6esofnmin553608729" target="_blank"><img src="./1 часть.jpg"></a></div>
+                <div><a href="https://kadikama.com/110-moy-malenkiy-poni-druzhba-eto-chudo.html" target="_blank"><img src="./мультик_.jpg"></a></div>
+                <div><a href="https://rutube.ru/video/895ece0a9e64521d30182cf741dc4a0f/?ysclid=m6etumgf4i522576482" target="_blank"><img src="./игры.jpg"></a></div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 LeeVaza Entertainment. Все права защищены.</p>
+    </footer>
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function changeSlide(n) {
+            slideIndex += n;
+            showSlides();
+        }
+
+        function showSlides() {
+            const slides = document.getElementsByClassName("slide");
+            if (slideIndex >= slides.length) {
+                slideIndex = 0;
+            }
+            if (slideIndex < 0) {
+                slideIndex = slides.length - 1;
+            }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex].style.display = "block";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeeVaza Entertainment</title>
+    <link rel="stylesheet" href="./главная.css">
+</head>
+<body>
+    <header>
+        <h1>LeeVaza Entertainment</h1>
+        <h2>My Little Pony</h2>
+    </header>
+    <div class="image-container">
+        <img src="./1737650157303.png" alt="Первое изображение" class="primary">
+        <img src="./1737649614622.png" alt="Второе изображение" class="secondary">
+        <div class="menu">
+            <p class="me">МЕНЮ:</p>
+            <a href="./девочки из эквестрии.html">✩Девочки<br> из Эквестрии</a>
+            <a href="./фильмы.html">✩Фильмы и мультик</a>
+            <a href="./игра.html">✩Игра</a>
+        </div>
+    </div>
+    <main>
+        <div class="qqq">
+            <div class="dialog-container">
+                <div class="dialogue">
+                    <p class="character-text" id="characterText">Привет! Как дела?</p>
+                    <div class="options" id="options"></div>
+                </div>
+            </div>
+            <div class="guide">
+                <div class="text">
+                    <p id="guideName">Персонаж не выбран!</p>
+                    
+                </div>
+                <img id="guideImage" src="" alt="Изображение гида" class="meu">
+            </div>
+        </div>
+        <div class="video-background">
+            <video autoplay muted loop src="./lv_0_20250125105721.mp4" type="video/mp4">
+               
+            </video>
+        </div>
+        
+    </main>
+    <footer>
+        <div>
+       
+        <button class="карта">Карта</button>
+        <div class="map">
+            <!-- <img src="/9a8e60ed-a915-4687-96a5-c83decc396a0.jpg" alt="Карта My Little Pony" width="90%" /> Замените на свою ссылку на карту    -->
+            <div class="city city1">
+                <a href="https://mlp.fandom.com/ru/wiki/%D0%9F%D0%BE%D0%BD%D0%B8%D0%B2%D0%B8%D0%BB%D0%BB%D1%8C" target="_blank"> <!-- Ссылка на страницу города -->
+                    <img src="/f6a600a9ddc875143ca161a7bccb4875.jpg" alt="Город 1" /> <!-- Замените на ссылку на изображение города -->
+                    <p>Понивиль</p>
+                </a>
+            </div>
+        
+            <div class="city city2">
+                <a href="https://mlp.fandom.com/ru/wiki/%D0%9A%D0%B0%D0%BD%D1%82%D0%B5%D1%80%D0%BB%D0%BE%D1%82" target="_blank"> <!-- Ссылка на страницу города -->
+                    <img src="/25a3bb94178b433aa674901d32a88594.jpeg" alt="Город 2" /> <!-- Замените на ссылку на изображение города -->
+                    <p>Катерлот</p>
+                </a>
+            </div>
+        
+            <div class="city city3">
+                <a href="https://mlp.fandom.com/ru/wiki/%D0%9A%D1%80%D0%B8%D1%81%D1%82%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D0%B8%D0%BC%D0%BF%D0%B5%D1%80%D0%B8%D1%8F" target="_blank"> <!-- Ссылка на страницу города -->
+                    <img src="photo_5246784323296817976_x.jpg" alt="Город 3" /> <!-- Замените на ссылку на изображение города -->
+                    <p>Кристальная Империя</p>
+                </a>
+            </div>
+            <div class="city city4">
+                <a href="https://mlp.fandom.com/ru/wiki/%D0%92%D0%B5%D1%87%D0%BD%D0%BE%D0%B7%D0%B5%D0%BB%D1%91%D0%BD%D1%8B%D0%B9_%D0%BB%D0%B5%D1%81" target="_blank"> <!-- Ссылка на страницу города -->
+                    <img src="/81b1503a7004058bc986bccc88b52159.jpg" alt="Город 3" /> <!-- Замените на ссылку на изображение города -->
+                    <p>Вечно-зеленый лес</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <p>&copy; 2025 LeeVaza Entertainment. Все права защищены.</p>
+</footer>
+
+<script>
+        document.querySelector('.карта').
+        addEventListener('click', function() {
+            const карта = document.querySelector('.map');
+            карта.classList.toggle('open');
+        });
+        window.onload = function() {
+            const guide = localStorage.getItem('selectedGuide');
+            const guideImage = localStorage.getItem('selectedGuideImage');
+            document.getElementById('guideName').textContent = guide ? guide : 'Персонаж не выбран!';
+            if (guideImage) {
+                document.getElementById('guideImage').src = guideImage;
+            }
+        }
+        const characterText = document.getElementById('characterText');
+const optionsDiv = document.getElementById('options');
+
+const dialogues = [
+    {
+        text: "Привет! Как дела?",
+        options: [
+            { text: "Хорошо", response: "Отлично! Рада это слышать!" },
+            { text: "Плохо", response: "Сожалею. Может, хочешь поговорить?" }
+        ]
+    },
+    {
+        text: "Какая ваша любимая сладость?",
+        options: [
+            { text: "Тортик", response: "Что насчет тортика в лицо. Думаю тебе бы понравилось." },
+            { text: "Яблочный пирог", response: "Я обожаю яблочный пирог." },
+            { text: "Печенье", response: "Самое легкое в готовке и друзья будут рады." },
+            { text: "Пироженое", response: "Как думаешь сколько ты сможешь съесть?" }
+        ]
+    },
+    {
+        text: "Как зовут главную героиню, обладающую способностью управлять магией?",
+        options: [
+            { text: "Рейнбоу Дэш", response: "Думаю тебе стоит пересмотреть"},
+            { text: "Твайлайт Спаркл", response: "Верно!" },
+            { text: "Эпплджек", response: "Неверно!" },
+        ]
+    },
+    {
+        text: "Какой элемент дружбы олицетворяет Рарити?",
+        options: [
+            { text: "Честность", response: "Неверно!"},
+            { text: "Щедрость", response: "Верно!" },
+            { text: "Красота", response: "Неверно!" },
+            { text: "Доброта", response: "Неверно!" },
+        ]
+    },
+    {
+        text: " Какова роль Твайлайт в создании и формировании новых поколений поней с учетом ее магических способностей и полученного опыта в управлении Эквестрией?  ",
+        options: [
+            { text: " Она становится просто наблюдателем событий", response: "Неверно!"},
+            { text: "Учитель и mentor для новых поней-друзей  ", response: "Неверно!" },
+            { text: "Лидер и предводитель, который управляет всей Эквестрией", response: "Неверно!" },
+            { text: "Изобретательница новых форм магии для молодого поколения", response: "Верно!" },
+        ]
+    },
+    {
+        text: "Каковы основные черты характера Дискорда и как они влияют на взаимодействие с другими персонажами, особенно с Твайлайт Спаркл?  ",
+        options: [
+            { text: "Упрямство, которое развивает понимание между всеми  ", response: "Неверно!"},
+            { text: "Игривость, создающая напряженные ситуации и разряжающая атмосферу  ", response: "Верно!" },
+            { text: "Невозможность быть серьезным, вызывающая конфликт", response: "Неверно!" },
+            { text: "Интеллект и хитрость, позволяющие манипулировать другими  ", response: "Верно!" },
+        ]
+    },
+    {
+        text: "В каком эпизоде Пинки Пай организует свой первый 'Пони-Party', и какие три основных правила она устанавливает для этого праздника?",
+        options: [
+            { text: "'Party of One' - Не говорить о грустных вещах, развлекаться и сохранять секреты  ", response: "Неверно!"},
+            { text: "'The Best Night Ever' - Улучшить настроение, много танцевать и делиться едой  ", response: "Верно!" },
+            { text: "'Swarm of the Century' - Праздновать, приглашать всех и заполнять угощениями  ", response: "Неверно!" },
+            { text: "'The Last Party' - Делать много подарков, носить шляпы и веселиться вместе", response: "Неверно!" },
+        ]
+    },
+    {
+        text: "Какая связь существует между Селестией и Луной, и как она меняется на протяжении сериала в контексте падения Луны в тьму и её восстановления?  ",
+        options: [
+            { text: "Они всегда были враждебны друг к другу   ", response: "Неверно!"},
+            { text: "Они сослуживцы, никогда не ладившие  ", response: "Неверно!" },
+            { text: "Сестры, сражающиеся за королевство, но улаживающие свои разногласия", response: "Верно!" },
+            { text: "Долгожданные союзники, которые всегда были вместе  ", response: "Неверно!" },
+        ]
+    },
+     {
+        text: "Ты можешь скачать игру, я буду очень этому рада",
+        options: [
+            { text: "Хорошо", response: "Спасибочки" },
+            { text: "Нет", response: "Я приду за тобой сегодня ночью." }
+        ]
+    }
+];
+
+let currentDialogueIndex = 0;
+
+function loadDialogue() {
+    const currentDialogue = dialogues[currentDialogueIndex];
+    characterText.textContent = currentDialogue.text;
+    optionsDiv.innerHTML = '';
+    currentDialogue.options.forEach(option => {
+        const button = document.createElement('button');
+        button.textContent = option.text;
+        button.className = 'option-button';
+        button.onclick = () => displayResponse(option.response);
+        optionsDiv.appendChild(button);
+    });
+}
+
+function displayResponse(response) {
+    characterText.textContent = response;
+    optionsDiv.innerHTML = ''; // Убираем кнопки
+    setTimeout(() => {
+        currentDialogueIndex = (currentDialogueIndex + 1) % dialogues.length; // Переход к следующему диалогу
+        loadDialogue();
+    }, 2000); // Пауза 2 сек перед следующим диалогом
+}
+
+// Начинаем с первой строки диалога
+loadDialogue();
+    </script>
+
+</body>
+</html>

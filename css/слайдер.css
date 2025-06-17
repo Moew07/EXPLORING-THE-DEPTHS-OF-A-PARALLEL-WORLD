@@ -1,0 +1,142 @@
+.image-container {
+    position: relative;
+    width: fit-content;
+    display: block;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.image-container img {
+    position: absolute;
+    /* left: -600px; */
+    width: 300px; /* Ширина изображения */
+    height: auto; /* Высота будет пропорциональна ширине */
+    transition: opacity 0.5s ease; /* Плавный переход */
+}
+
+.image-container img.secondary {
+    position: absolute;
+    top: 0;
+    /* left: -600px; */
+    opacity: 0; /* Изначально скрыто */
+}
+
+.image-container:hover img.primary {
+    opacity: 0; /* Прозрачность первого изображения при наведении */
+}
+
+.image-container:hover img.secondary {
+    opacity: 1; /* Показать второе изображение при наведении */
+}
+
+.menu {
+    display: none; /* Скрыть меню по умолчанию */
+    position: absolute;
+    top: 90px;
+    left: 80px;
+    padding: 15px;
+}
+
+.image-container:hover .menu {
+    display: block; /* Показать меню при наведении на изображение */
+}
+
+.menu a {
+    display: block; /* Сделать ссылки в меню блоками */
+    margin: 5px 0;
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+}
+.slider {
+    position: relative;
+    max-width: 400px;
+    top: -250px;
+    margin: auto;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+.slides {
+    display: flex;
+}
+
+.slide {
+    min-width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    font-size: 24px;
+    background-color: #f0f0f0;
+}
+
+.slide img {
+    width: 100%;
+    overflow: scroll;
+}
+
+.slide:nth-child(1) {
+    background-color: #ff9999;
+    height: auto;
+}
+
+.slide:nth-child(2) {
+    background-color: #99ff99;
+    height: auto;
+}
+
+.slide:nth-child(3) {
+    background-color: #9999ff;
+    height: auto;
+}
+
+button.prev,
+button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+button.prev:hover,
+button.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+/* Оформление панели */
+#side-checkbox {
+    display: none;
+}
+.side-panel {
+    position: fixed;
+    z-index: 999999;
+    top: 0;
+    left: -360px;
+    background: #272727;
+    transition: all 0.5s;   
+    width: 320px;
+    height: 100vh;
+    box-shadow: 10px 0 20px rgba(0,0,0,0.4);
+    color: #FFF;
+    padding: 0 20px;
+}
+.side-title {
+    font-size: 24px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ffffff;
+}
+

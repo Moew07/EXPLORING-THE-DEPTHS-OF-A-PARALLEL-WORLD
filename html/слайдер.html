@@ -1,0 +1,33 @@
+<div class="slider">
+    <div class="slides">
+        <div class="slide"><img src="./104663.jpg"  alt="винкс"></div>
+        <div class="slide"><img src="./104811.jpg"  alt="винкс"></div>
+        <div class="slide"><img src="./104838.jpg"  alt="винкс" ></div>
+    </div>
+    <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+    <button class="next" onclick="changeSlide(1)">&#10095;</button>
+</div>  
+<script>
+    let slideIndex = 0;
+    showSlides();
+
+    function changeSlide(n) {
+        slideIndex += n;
+        showSlides();
+    }
+
+    function showSlides() {
+        const slides = document.getElementsByClassName("slide");
+        if (slideIndex >= slides.length) {
+            slideIndex = 0;
+        }
+        if (slideIndex < 0) {
+            slideIndex = slides.length - 1;
+        }
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex].style.display = "block";
+    }
+</script>  
+</main>

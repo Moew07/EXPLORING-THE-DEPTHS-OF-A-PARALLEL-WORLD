@@ -1,0 +1,143 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}header {
+    text-align: center;
+    background-color: #4b43a8;
+    color: white;
+    padding: 15px 0;
+}
+.me {
+    font-family: Arial, sans-serif;
+    margin: 5px 0;
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+}
+main {
+    display: flex;
+    justify-content: center;
+    min-height: 80vh;
+    background: url(./эквестрия\ герл.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+footer {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    color: white;
+    background-color: #4b43a8;
+}
+element.style {
+    margin: auto;
+    border-color: black;
+    text-align: center;
+    font-size: 16px;
+    line-height: 22px;
+    background-color: white;
+}
+.table {
+    width: 500px;
+    margin: auto;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+th, td {
+    border: 2px solid #3e165b;
+    padding: 12px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+th {
+    background-color: #503da3;
+    color: white;
+    font-size: 18px;
+}
+td {
+    background-color: #f9f9f9;
+}
+td:hover {
+    background-color: #d88de2;
+}
+img {
+    width: 100px; /* Ширина изображений */
+    height: auto; /* Авто высота для сохранения пропорций */
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+a {
+    text-decoration: none;
+    color: #8340a9;
+    font-weight: bold;
+}
+a:hover {
+    color: #370e46; /* Цвет ссылки при наведении */
+}
+.image-container {
+    position: relative;
+    width: fit-content;
+    display: block;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.image-container img {
+    position: absolute;
+    /* left: -600px; */
+    width: 300px; /* Ширина изображения */
+    height: auto; /* Высота будет пропорциональна ширине */
+    transition: opacity 0.5s ease; /* Плавный переход */
+}
+
+.image-container img.secondary {
+    position: absolute;
+    top: 0;
+    /* left: -600px; */
+    opacity: 0; /* Изначально скрыто */
+}
+
+.image-container:hover img.primary {
+    opacity: 0; /* Прозрачность первого изображения при наведении */
+}
+
+.image-container:hover img.secondary {
+    opacity: 1; /* Показать второе изображение при наведении */
+}
+
+.menu {
+    display: none; /* Скрыть меню по умолчанию */
+    position: absolute;
+    top: 50px;
+    left: 80px;
+    padding: 15px;
+}
+
+.image-container:hover .menu {
+    display: block; /* Показать меню при наведении на изображение */
+}
+
+.menu a {
+    display: block; /* Сделать ссылки в меню блоками */
+    margin: 5px 0;
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+}
+.video {
+    position: absolute;
+    top: 500px;
+    left: 70vw;
+}
+.video1 {
+    position: absolute;
+    top: 500px;
+    left: 60vw;
+}
+video::-webkit-media-controls {
+    display:none !important;
+}
